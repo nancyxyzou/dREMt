@@ -23,7 +23,7 @@ section {
 }
 
 .background {
-  background-image: linear-gradient(#B978DA 30%, #FCF6FF 70%);
+  background-image: linear-gradient(#B978DA 20%, #FCF6FF 80%);
 }
 
 h1{
@@ -73,6 +73,7 @@ p {
 
 .rightcloud {
   align-self: right;
+  max-width: 100%;
 }
 
 #lcloud {
@@ -88,5 +89,14 @@ p {
 .mainblurb {
   font-size: 5rem;
   font-weight: 300;
-  color: rgb(122, 64, 142);
+  color: rgb(243, 207, 255);
+  /* color: rgb(226, 190, 237); */
+}
+
+.normtext {
+  font-size: 4rem;
+  font-weight:300;
+  color: rgb(140, 61, 167);
+  margin: 3rem;
+  text-align: center;
 }

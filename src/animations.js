@@ -4,6 +4,7 @@ import TextBoxInput from './textbox';
 import BoxComponent from './interpretations'; // Adjust the import path
 import LeftCloud from './clouds';
 import RightCloud from './rightcloud';
+import LeftCloud2 from './leftclouds';
 
 function Hidden() {
   const targetRef = useRef(null);
@@ -39,6 +40,23 @@ function Hidden() {
       {/* our_blurb */}
       <section className="hidden">
         <RightCloud />
+      </section>
+
+      {/* explanation 1 */}
+      <section className="hidden">
+        <LeftCloud2 />
+        <div>
+            <p className="normtext">What do you dream about?</p>
+            <p className="normtext">What does it mean?</p>
+        </div>
+      </section>
+
+    {/* explanation 2 */}
+    <section className="hidden">
+        <div>
+            <p className="normtext">We're here to interpret</p>
+            <p className="normtext">what you've dREMt of!</p>
+        </div>
       </section>
 
       {/* prompt_box */}
