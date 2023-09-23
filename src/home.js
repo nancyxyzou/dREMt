@@ -10,8 +10,7 @@ const DreamInterpreter = () => {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
-        Authorization:
-          "Bearer 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",
+        Authorization: `Bearer ${process.env.REACT_APP_NOT_SECRET_CODE}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
