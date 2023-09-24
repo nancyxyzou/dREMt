@@ -96,7 +96,13 @@ p {
 .normtext {
   font-size: 4rem;
   font-weight:300;
-  color: rgb(140, 61, 167);
+  color: rgb(152, 83, 186);
   margin: 3rem;
   text-align: center;
+}
+
+.textbox {
+  min-width: 500px;
+  min-height: 200px;
+  position: relative;
 }

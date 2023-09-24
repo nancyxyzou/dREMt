@@ -42,7 +42,8 @@ function Hidden() {
 
       {/* explanation 1 */}
       <section className="hidden">
-        <LeftCloud2 />
+        <div> <LeftCloud2 /></div>
+       
         <div>
           <p className="normtext">What do you dream about?</p>
           <p className="normtext">What does it mean?</p>
