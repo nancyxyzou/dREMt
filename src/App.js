@@ -1,9 +1,9 @@
-import Cloud_left from "./clouds";
 import "./App.css";
-import Hidden from "./animations";
+import Homepage from "./home";
+import './index.css';
 
 function App() {
-  return <Hidden />;
+  return <Homepage />;
 }
 
 export default App;

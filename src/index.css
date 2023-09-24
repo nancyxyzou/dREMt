@@ -5,7 +5,6 @@ body {
   margin: 0;
 }
 
-/* Sections */
 section {
   display: grid;
   justify-content: center;
@@ -22,18 +21,26 @@ section {
   opacity: 1;
 }
 
+.credits {
+  min-height: 20vh;
+  background-color: #f7e8ff;
+}
+
 .background {
   background-image: linear-gradient(#B978DA 20%, #FCF6FF 80%);
 }
 
 h1{
   margin: 0;
-  height: 30px;
 }
 
 p {
   margin: 0;
-  height: 20px;
+}
+
+.credtext {
+  text-align: center;
+  color:#B978DA;
 }
 
 #cloud{
@@ -42,7 +49,7 @@ p {
   align-items: last baseline ;
 }
 
-/* styles.css (or your preferred stylesheet) */
+
 .box {
   width: 200px;
   height: 200px;
@@ -52,22 +59,21 @@ p {
   text-align: left;
 }
 
-/* ImageTextOverlap.css */
 
 .container {
-  position: relative; /* Position the container relative to its parent */
-  max-width: 100%; /* Ensure the container is responsive */
+  position: relative;
+  max-width: 100%;
 }
 
 .leftcloud {
-  max-width: 75%; /* Ensure the image is responsive */
+  max-width: 100%;
 }
 
 .text {
-  position: absolute; /* Position the text absolutely within the container */
-  top: 50%; /* Adjust the top position as needed */
-  left: 50%; /* Adjust the left position as needed */
-  transform: translate(-50%, -50%); /* Center the text both horizontally and vertically */
+  position: absolute; 
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
   font-size: x-large;
 }
 
@@ -83,14 +89,15 @@ p {
 .title {
   font-size: 10rem;
   font-weight: 300;
-  color: rgb(243, 207, 255);
+  color: rgba(239, 206, 255, 1);
+  text-align: center;
 }
 
 .mainblurb {
   font-size: 5rem;
   font-weight: 300;
-  color: rgb(243, 207, 255);
-  /* color: rgb(226, 190, 237); */
+  color: rgba(152, 83, 186, 0.6);
+  text-align: center;
 }
 
 .normtext {
@@ -99,10 +106,144 @@ p {
   color: rgb(152, 83, 186);
   margin: 3rem;
   text-align: center;
+  line-height: 5rem;
+}
+
+#lastprompt {
+  margin-bottom: 3rem;
 }
 
 .textbox {
-  min-width: 500px;
+  width: 50%;
   min-height: 200px;
   position: relative;
+}
+
+.middlecloud {
+  max-width: 95%;
+  position: center;
+}
+
+.textbox-container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.form-container{ 
+  display: flex;
+  justify-content: center; 
+  align-items: center;          
+  flex-direction: column;  
+  gap: 10px;    
+  padding-left: 20%;
+  padding-right: 20%;    
+}
+
+.interpret-btn {
+  background-color: rgb(152, 83, 186); 
+  color: #ffffff;         
+  border: none;           
+  padding: 10px 20px;        
+  border-radius: 5px;        
+  cursor: pointer;          
+  transition: background-color 0.3s; 
+  font-size: larger;
+}
+
+.interpret-btn:hover {
+  background-color: rgb(243, 207, 255); 
+
+}
+
+.interpret-btn:disabled {
+  background-color: #bdc3c7; 
+  cursor: not-allowed;       
+}
+
+.response{
+    border: 2px solid rgb(152, 83, 186);     
+    padding: 15px;                  
+    border-radius: 5px;             
+    background-color: rgba(241, 219, 248, 0.523);     
+    margin-top: 20px;             
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); 
+    font-size: larger;
+    animation: fadeIn 2.5s ease forwards;
+    margin-bottom: 3rem;
+}
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.interpret-title{
+text-align: center;
+color: rgb(152, 83, 186);
+}
+
+.inputbox{
+background-color:rgba(241, 219, 248, 0.523) ;
+
+}
+
+#sec-2 {
+  background-color: aliceblue;
+}
+.scroll-down {
+  height: 50px;
+  width: 30px;
+  border: 2px solid  rgb(243, 207, 255);
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.scroll-down::before,
+.scroll-down::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  height: 10px;
+  width: 10px;
+  transform: translate(-50%, -100%) rotate(45deg);
+  border: 2px solid  rgb(243, 207, 255);
+  border-top: transparent;
+  border-left: transparent;
+  animation: scroll-down 1s ease-in-out infinite;
+}
+.scroll-down::before {
+  top: 30%;
+  animation-delay: 0.3s;
+}
+
+@keyframes scroll-down {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    top: 90%;
+    opacity: 0;
+  }
+}
+
+textarea {
+  font-family: inherit;
+  font-size: larger;
+  border-radius: 8px; 
+  padding: 2%;
+  border-color: #B978DA;
 }

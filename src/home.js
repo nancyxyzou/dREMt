@@ -1,66 +1,87 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import "./index.css";
+import LeftCloud from "./components/clouds";
+import RightCloud from "./components/rightcloud";
+import LeftCloud2 from "./components/leftclouds";
+import LeftCloud3 from "./components/leftcloud3";
+import DreamInterpreter from "./interpreter";
+import MiddleCloud from "./components/middlecloud";
+import ScrollDown from "./components/scroll";
+import LoadCloud from "./components/loadingclouds";
 
-const DreamInterpreter = () => {
-  const [dream, setDream] = useState("");
-  const [interpretation, setInterpretation] = useState("");
+function Homepage() {
+  const targetRef = useRef(null);
 
-  const handleSubmit = async () => {
-    const prompt = `this was my dream: ${dream}, can u interpret it and tell me what it means?`;
+  const [loading, setLoading] = useState(false);
 
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${
-          process.env.REACT_APP_NOT_SECRET_CODE_PART1 +
-          process.env.REACT_APP_NOT_SECRET_CODE_PART2
-        }`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "gpt-3.5-turbo",
-        messages: [
-          {
-            role: "system",
-            content:
-              "You are a dream interpreter that helps people make sense of their dreams. Do not exceed 3-4 sentences in your response.",
-          },
-          {
-            role: "user",
-            content: prompt,
-          },
-        ],
-        max_tokens: 200,
-      }),
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log(entry);
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          entry.target.classList.remove("show");
+        }
+      });
     });
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
 
-    const data = await response.json();
-
-    console.log(data);
-    if (data.choices && data.choices.length > 0) {
-      const responseData = data.choices[0].message.content.trim();
-      const interpretationResponse = responseData.split("\n").pop();
-      setInterpretation(interpretationResponse);
-    } else {
-      console.error("No interpretation received from the API.");
-      setInterpretation("Unable to interpret the dream.");
-    }
-  };
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
-    <div>
-      <textarea
-        value={dream}
-        onChange={(e) => setDream(e.target.value)}
-        placeholder="Describe your dream..."
-      ></textarea>
-      <button onClick={handleSubmit}>Interpret</button>
-      {interpretation && (
+    <div class="background">
+      <section className="hidden">
+        <LeftCloud />
+        <ScrollDown />
+      </section>
+
+      <section className="hidden">
+        <RightCloud />
+      </section>
+
+      <section className="hidden">
+        <div> <LeftCloud2 /></div>
+       
         <div>
-          <strong>Interpretation:</strong> {interpretation}
+          <p className="normtext">What do you dream about?</p>
+          <p className="normtext">What does it mean?</p>
         </div>
-      )}
+      </section>
+
+      <section className="hidden">
+        <div> <MiddleCloud /></div>
+        <div>
+          <p className="normtext">We're here to interpret what you've dREMt of!</p>
+        </div>
+        <LeftCloud3 />
+      </section>
+
+      <section className="hidden">
+        <div>
+            <LoadCloud show={loading}/>
+            <p className="normtext" id="lastprompt">Enter your dream and see what it means...</p>
+            <div className="textbox-container">
+              <DreamInterpreter loading={loading} setLoading={setLoading} />
+            </div>
+        </div>
+      </section>
+
+      <section className="credits">
+            <div>
+                <p className="credtext">this Is just for fun And Not to be taken seriously 🙂</p>
+                <p className="credtext">made with passion by:</p>
+                <p className="credtext">yaxin w, maggie w, nancy Z</p>
+                <p></p>
+            </div>
+            
+      </section>
     </div>
   );
-};
+}
 
-export default DreamInterpreter;
+export default Homepage;
