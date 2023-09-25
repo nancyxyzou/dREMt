@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+**Inspiration**
+From horoscopes to four-leaf clovers for good luck, we humans love to find a greater meaning behind our experiences. Just as nature holds secrets waiting to be unveiled, our dreams are a canvas of mysteries.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+What if, in every dream, there lies a message?
 
-## Available Scripts
+And so, we began our journey to uncover the hidden meanings within our nightly visions.
 
-In the project directory, you can run:
+**What it does**
+Users input their dreams into a designated text box. Once submitted, these dreams are processed by our 'Dream Interpreter’, which analyzes the content of the dream and provides insights into its potential meaning!
 
-### `npm start`
+**How we built it**
+We used React and HTML/CSS for the frontend, with the ‘Dream Interpreter’ powered by OpenAI's GPT 3.5 API. The UI was prototyped on Figma with all assets built completely from scratch.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Challenges we ran into**
+- Getting the API to connect and give us a meaningful response!
+- Various UI transitions and animations
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Our proudest feats**
+- Our fine-tuned AI that generates meaningful responses
+- Our elegant UI that looks nice and actually works!
+- All assets hand-drawn by team members 🙂
+  
+**What we learned**
+It was our first time using any API, so we learned a lot by using and fine-tuning OpenAI's GPT 3.5 API to help generate unique, insightful responses. We also learned so many new unique UI animations, transitions, and design elements we hadn't used before while designing the frontend.
